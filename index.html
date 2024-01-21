@@ -1,11 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="En nuestro sitio podrás entender nuestro arte culinario, degustar sabores auténticos y gastronomía única en Buenos Aires.">
+    <meta name="keywords" content="Restaurante, Gastronomía, Cena, Estrella Michelin, Chef, Menú">
+    <title>Inicio</title>
+    <link rel="icon" href="img/favicon.webp" type="image/x-icon">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- cierre -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <!-- Header General -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Restaurante Tvomcala</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="pages/nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="pages/contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Search">
+                        <button class="btn btn-secondary" type="submit">Busqueda</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Cierre -->
+
+    <!-- Index Main -->
+    <main>
+        <section id="inicio">
+            <div class="inicio-contenido">
+                <h1>Bienvenido a Tvomcala</h1>
+                <p>Disfruta de la mejor comida y ambiente en nuestra ubicación única.</p>
+                <a href="pages/contacto.html" class="boton-reserva">Hacer una reserva</a>
+            </div>
+
+    <div class="video0">
+        <iframe width="600" height="320" src="https://www.youtube.com/embed/BI5XMRYbkKA?si=99Pxlj9t62n6Gh5X"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+
+    <section id="blog">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="blog-posts">
+                <!-- Primer artículo del blog -->
+                <div class="blog-post">
+                    <h3>Nuestro Menú</h3>
+                    <p>En nuestro restaurante, te invitamos a un viaje culinario inigualable, donde cada plato es una obra maestra de sabores y texturas. Nuestra cocina fusiona la tradición con la innovación, creando una experiencia única para tu paladar.</p>
+                    <a href="pages/menu.html" class="btn-leer-mas">Leer más</a>
+                </div>
+    
+                <!-- Segundo artículo del blog -->
+                <div class="blog-post">
+                    <h3>Gran Evento</h3>
+                    <p>En Tvomcala, no solo ofrecemos exquisitas comidas, también estamos aquí para celebrar los momentos de la vida contigo. Nuestro restaurante es el lugar perfecto para organizar tus fiestas y eventos, creando recuerdos que perdurarán para siempre.</p>
+                    <a href="pages/eventos.html" class="btn-leer-mas">Leer más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+    <!-- Cierre -->
+
+    <!-- Footer General -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Reservas</h5>
+                    <p>Puedes hacer reservas llamando al número: <strong>(123) 456-7890</strong></p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Horarios</h5>
+                    <p>Lunes a Viernes: 19:30 - 00:00</p>
+                    <p>Sábados y Domingos: 19:00 - 01:30</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <ul class="list-unstyled">
+                        <li> <img src="img/facebook.svg" alt="Facebook"><a href="#" target="_blank">Facebook</a></li>
+                        <li><img src="img/twitter.svg" alt="Twitter"><a href="#" target="_blank">Twitter</a></li>
+                        <li><img src="img/instagram.svg" alt="Instagram"><a href="#" target="_blank">Instagram</a></li>
+                        <li><img src="img/wpp.svg" alt="Whatssapp"><a href="#" target="_blank">Whatssapp</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center">
+            <span class="text-muted">© 2023 Mi Sitio Web</span>
+        </div>
+    </footer>
+    <!-- Cierre -->
     <script src="index.js"></script>
 </body>
+
 </html>

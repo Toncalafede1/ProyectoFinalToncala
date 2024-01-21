@@ -1,91 +1,96 @@
-function validarNombre(nombre) {
-    return !(/[^\sa-zA-Z]/.test(nombre));
-}
+document.getElementById("reservaForm").addEventListener("submit", function(event) {
+    event.preventDefault(); 
 
-function saludar(nombre) {
-    console.log("Bienvenidos a Tvomcala, el restaurante de tus sueños. Te deseamos una gran experiencia" + " " + nombre);
-}
+    const nombre = document.getElementById("nombre").value.trim();
+    const fecha = document.getElementById("fecha").value;
+    const numIntegrantes = document.getElementById("integrantes").value;
 
-let nombre = prompt("Ingrese su nombre");
+    if (!nombre || !fecha || !numIntegrantes) {
+        mostrarMensajeError("Por favor, complete todos los campos requeridos: Nombre, Fecha y Número de Integrantes.");
+        return;
+    }
 
-while (!validarNombre(nombre)) {
-    nombre = prompt("Por favor, ingrese un nombre válido (solo letras y espacios):");
-}
-saludar(nombre);
+    
+    if (!validarNombre(nombre)) {
+        mostrarMensajeError("El campo 'Nombre' solo debe contener letras.");
+        return;
+    }
 
-let reserva = {
-    nombre: nombre,
-    integrantes: [],
-    obtenerCantidadIntegrantes: function () {
-        return this.integrantes.length;
-    },
-    imprimirNombresIntegrantes: function () {
-        if (this.integrantes.length === 0) {
-            console.log("No hay nombres de integrantes.");
-        } else {
-            console.log("Nombres de integrantes:");
-            this.integrantes.forEach(integrante => {
-                console.log(integrante.nombre);
-            });
+    
+    if (!validarFecha(fecha)) {
+        mostrarMensajeError("Las fechas disponibles son los días del 11 al 30.");
+        return;
+    }
+
+    
+    localStorage.setItem("nombre", nombre);
+    localStorage.setItem("fecha", fecha);
+    localStorage.setItem("numIntegrantes", numIntegrantes);
+
+    
+    const nombresIntegrantes = [];
+    for (let i = 1; i <= numIntegrantes; i++) {
+        const integranteNombre = document.getElementsByName("integrante" + i)[0].value;
+
+        
+        if (!validarNombre(integranteNombre)) {
+            mostrarMensajeError("El nombre del integrante " + i + " solo debe contener letras.");
+            return;
         }
+
+        nombresIntegrantes.push(integranteNombre);
     }
-};
+    localStorage.setItem("nombresIntegrantes", JSON.stringify(nombresIntegrantes));
 
-let fechaReserva;
-let dia, mes, anio;
+    
+    mostrarMensajeExito("Se ha registrado su reserva.");
+});
 
-while (true) {
-    fechaReserva = prompt("Por favor, introduce la fecha de reserva (DD-MM-YYYY):");
-    let fecha = fechaReserva.split('-');
-    dia = parseInt(fecha[0], 10);
-    mes = parseInt(fecha[1], 10);
-    anio = parseInt(fecha[2], 10);
+function validarNombre(nombre) {
+    
+    return /^[a-zA-Z]+$/.test(nombre);
+}
 
-    const fechaActual = new Date();
-    const anioActual = fechaActual.getFullYear();
+function validarFecha(fecha) {
+    const fechaSeleccionada = new Date(fecha);
+    const dia = fechaSeleccionada.getDate();
+    
+    
+    return dia >= 11 && dia <= 30;
+}
 
-    if (
-        mes >= 1 && mes <= 12 &&
-        dia >= 11 && dia <= 30 &&
-        anio >= anioActual && anio <= anioActual + 1
-    ) {
-        console.log("Tu fecha de reserva es: " + fechaReserva);
-        console.log("Gracias!");
+function agregarNombres() {
+    const numIntegrantes = document.getElementById("integrantes").value;
 
-        reserva.fecha = fechaReserva;
+    
+    if (isNaN(numIntegrantes) || numIntegrantes <= 0) {
+        mostrarMensajeError("El número de integrantes debe ser un valor numérico mayor que cero.");
+        return;
+    }
 
-        break;
-    } else {
-        console.log("Por favor, introduce una fecha válida (días 11 al 30, meses 1 al 12, año actual o próximo).");
+    const nombresDiv = document.getElementById("nombresIntegrantes");
+    nombresDiv.innerHTML = ""; 
+
+    for (let i = 1; i <= numIntegrantes; i++) {
+        const label = document.createElement("label");
+        label.innerHTML = "Nombre del Integrante " + i + ": ";
+        nombresDiv.appendChild(label);
+
+        const input = document.createElement("input");
+        input.type = "text";
+        input.name = "integrante" + i;
+        nombresDiv.appendChild(input);
+
+        nombresDiv.appendChild(document.createElement("br"));
     }
 }
 
-let cantidadIntegrantes;
-while (true) {
-    let input = prompt("¿Cuántos integrantes serán en la reserva?");
-    if (!isNaN(input)) {
-        cantidadIntegrantes = parseInt(input);
-        break;
-    } else {
-        console.log("Por favor, ingrese un número válido.");
-    }
+function mostrarMensajeError(mensaje) {
+    const outputMessages = document.getElementById("outputMessages");
+    outputMessages.innerHTML = "<p style='color: white;'>" + mensaje + "</p>";
 }
 
-if (cantidadIntegrantes === 0) {
-    console.log("No se pueden hacer reservas sin integrantes. Cancelando la reserva.");
-} else {
-    for (let i = 0; i < cantidadIntegrantes; i++) {
-        let nombreIntegrante;
-        do {
-            nombreIntegrante = prompt("Ingrese el nombre del integrante " + (i + 1) + ":");
-        } while (!validarNombre(nombreIntegrante));
-
-        reserva.integrantes.push({ nombre: nombreIntegrante });
-    }
-    
-    console.log("Cantidad de integrantes:", reserva.obtenerCantidadIntegrantes());
-    reserva.imprimirNombresIntegrantes();
-    
-    console.log("Información de la reserva:");
-    console.log(reserva);
+function mostrarMensajeExito(mensaje) {
+    const outputMessages = document.getElementById("outputMessages");
+    outputMessages.innerHTML = "<p style='color: white;'>" + mensaje + "</p>";
 }
