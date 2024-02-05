@@ -6,9 +6,14 @@
 }
 
 body {
+    /* display: flex;
+    flex-direction: column;
+    min-height: 100vh; */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Establece la altura mínima del cuerpo como el 100% de la altura de la ventana */
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 /* Cierre */
@@ -118,6 +123,7 @@ section#inicio .video0 {
 /* Nosotros Main */
 .fondo {
     background-color: black;
+    flex: 1;
 }
 
 .fondo .nosotros {
@@ -262,15 +268,80 @@ input[type="button"]:hover, input[type="submit"]:hover {
     padding: 10px;
     border-radius: 5px;
 }
-
-
 /* Cierre */
 
+/* listareservas */
+.container {
+    max-width: 800px;
+    margin: 20px auto; /* Añadido margen superior e inferior para centrar */
+    padding: 20px;
+    background-color: #fff; /* Añadido fondo blanco */
+    border-radius: 10px; /* Añadido borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añadida sombra */
+}
+
+h2 {
+    color: #007bff;
+}
+
+#listaDeReservas {
+    margin-top: 20px;
+    color: #f8f9fa;
+}
+
+.reserva {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c82333;
+}
+
+main {
+    padding-top: 20px; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; 
+}
+
+#dataTable th, #dataTable td {
+    border: 1px solid black; 
+    padding: 8px;
+    text-align: left;
+    /* background-color: #ccc; */
+    background-color: #f2f2f2;
+    color: #212529; 
+}
+/* Cierre */
 
 /* Footer General */
 footer {
     background-color: #f8f9fa;
     padding: 30px 0;
+    margin-top: auto;
 }
 
 li a {
@@ -360,6 +431,20 @@ li a {
         text-align: center;
     }
 
+    /* Cierre */
+
+    /* Media Queries listareserva */
+    #listaDeReservas{
+        text-align: center;
+    }
+
+    #dataTable {
+        margin-top: 10px; /* Ajusta según sea necesario */
+    }
+
+    #dataTable th, #dataTable td {
+        font-size: 12px; /* Ajusta según sea necesario para dispositivos más pequeños */
+    }
     /* Cierre */
 
     /* Media Queries Footer General */

@@ -16,6 +16,8 @@
         crossorigin="anonymous"></script>
     <!-- cierre -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- SweetAlert CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
 </head>
 
 <body>
@@ -57,7 +59,7 @@
             <div class="inicio-contenido">
                 <h1>Bienvenido a Tvomcala</h1>
                 <p>Disfruta de la mejor comida y ambiente en nuestra ubicación única.</p>
-                <a href="pages/contacto.html" class="boton-reserva">Hacer una reserva</a>
+                <a href="pages/contacto.html" class="boton-reserva" onclick="mostrarBienvenida(event)">Hacer una reserva</a>
             </div>
 
     <div class="video0">
@@ -120,6 +122,9 @@
     </footer>
     <!-- Cierre -->
     <script src="index.js"></script>
+    <!-- SweetAlert JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 </body>
 
 </html>

@@ -52,50 +52,29 @@
     </header>
     <!-- Cierre -->
 
-    <!-- Contacto Main -->
+    <!-- Contenido Principal de Reservas -->
     <main class="fondo">
-        <section class="contacto">
-            <div class="contenido1">
-                <h1>Contacto</h1>
-                <p>Estamos encantados de ayudarte con cualquier pregunta o solicitud que tengas. No dudes en ponerte en
-                    contacto con nosotros.</p>
-            </div>
-            <div class="conjunto">
-                <div class="mapa">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26281.72940112725!2d-58.44161504418644!3d-34.57339628285223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb59c771eb933%3A0x6b3113b596d78c69!2sPalermo%2C%20CABA!5e0!3m2!1ses-419!2sar!4v1693080689735!5m2!1ses-419!2sar"
-                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <div>
-                        <ul>
-                            <li>Dirección: Av. del Libertador 4625,CABA</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <form id="reservaForm">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required><br>
-
-                    <label for="fecha">Fecha de Reserva:</label>
-                    <input type="date" id="fecha" name="fecha" required><br>
-
-                    <label for="integrantes">Número de Integrantes:</label>
-                    <input type="number" id="integrantes" name="integrantes" min="1" required><br>
-
-                    <div id="nombresIntegrantes"></div>
-
-                    <input type="button" value="Agregar Nombres" onclick="agregarNombres()">
-                    <input type="submit" value="Enviar Reserva">
-                </form>
-
-                <div id="outputMessages"></div>
-                <!-- Lista de Reservas -->
-                <a href="../pages/listareservas.html">Reservas</a>
+        <section id="reservas">
+            <h2>Tus Reservas</h2>
+            <div id="listaDeReservas"></div>
+            <button onclick="borrarReservas()">Borrar Reservas</button>
         </section>
+        <table id="dataTable" border="1">
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Nombre-Reserva</th>
+                    <th>Correo Electrónico</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los datos de la tabla se cargarán aquí mediante JavaScript -->
+            </tbody>
+        </table>
     </main>
     <!-- Cierre -->
 
+    <!-- Pie de Página General -->
     <!-- Footer General -->
     <footer>
         <div class="container">
@@ -126,7 +105,8 @@
         </div>
     </footer>
     <!-- Cierre -->
-    <script src="../index.js"></script>
+    <script src="../reservas.js"></script>
+    <script src="../fetch.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,22 @@
+function mostrarBienvenida(event) {
+    event.preventDefault(); // Prevenir la acción por defecto del enlace
+
+    Swal.fire({
+        title: 'Bienvenido a Tvomcala',
+        text: 'Haga tus reservas aquí',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "pages/contacto.html"; // Redirigir a la página de contacto
+        }
+    });
+}
+
+
+
+
+
 document.getElementById("reservaForm").addEventListener("submit", function(event) {
     event.preventDefault(); 
 
