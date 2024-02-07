@@ -6,12 +6,9 @@
 }
 
 body {
-    /* display: flex;
-    flex-direction: column;
-    min-height: 100vh; */
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Establece la altura mínima del cuerpo como el 100% de la altura de la ventana */
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
 }
@@ -52,70 +49,6 @@ section#inicio .video0 {
     justify-content: center;
     align-items: center;
     margin: 40px;
-}
-
-#blog {
-    padding: 50px 0;
-    text-align: center;
-    background-color: #212529;
-    margin: 10px;
-}
-
-#blog h2 {
-    color: aliceblue;
-    margin-bottom: 20px;
-}
-
-#blog .blog-posts {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px 0;
-}
-
-#blog .blog-posts .blog-post {
-    max-width: 300px;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: grey;
-}
-
-#blog .blog-posts h3 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-#blog .blog-posts p {
-    font-size: 17px;
-}
-
-#blog .blog-posts .btn-leer-mas {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-#blog .blog-posts .btn-leer-mas :hover {
-    background-color: #555;
-}
-
-.btn-leer-mas {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.btn-leer-mas:hover {
-    background-color: #555;
 }
 
 /* Cierre */
@@ -270,14 +203,14 @@ input[type="button"]:hover, input[type="submit"]:hover {
 }
 /* Cierre */
 
-/* listareservas */
+/* listareservas Main */
 .container {
     max-width: 800px;
-    margin: 20px auto; /* Añadido margen superior e inferior para centrar */
+    margin: 20px auto;
     padding: 20px;
-    background-color: #fff; /* Añadido fondo blanco */
-    border-radius: 10px; /* Añadido borde redondeado */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añadida sombra */
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 h2 {
@@ -331,7 +264,6 @@ table {
     border: 1px solid black; 
     padding: 8px;
     text-align: left;
-    /* background-color: #ccc; */
     background-color: #f2f2f2;
     color: #212529; 
 }
@@ -439,11 +371,11 @@ li a {
     }
 
     #dataTable {
-        margin-top: 10px; /* Ajusta según sea necesario */
+        margin-top: 10px; 
     }
 
     #dataTable th, #dataTable td {
-        font-size: 12px; /* Ajusta según sea necesario para dispositivos más pequeños */
+        font-size: 12px; 
     }
     /* Cierre */
 

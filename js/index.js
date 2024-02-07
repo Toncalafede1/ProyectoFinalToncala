@@ -1,5 +1,5 @@
 function mostrarBienvenida(event) {
-    event.preventDefault(); // Prevenir la acción por defecto del enlace
+    event.preventDefault(); 
 
     Swal.fire({
         title: 'Bienvenido a Tvomcala',
@@ -8,12 +8,10 @@ function mostrarBienvenida(event) {
         confirmButtonText: 'Aceptar'
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "pages/contacto.html"; // Redirigir a la página de contacto
+            window.location.href = "pages/contacto.html"; 
         }
     });
 }
-
-
 
 
 

@@ -1,11 +1,10 @@
-// Realizar la solicitud Fetch
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(data => {
-        // Mostrar los datos en la consola
+        
         console.log(data);
 
-        // Llenar la tabla con los datos
+        
         const tableBody = document.querySelector('#dataTable tbody');
         data.forEach(user => {
             const row = document.createElement('tr');
